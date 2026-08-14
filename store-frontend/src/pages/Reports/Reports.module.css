@@ -1,0 +1,144 @@
+.reports {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.dateFilters {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.dateInput {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.kpiCard {
+  background-color: var(--background);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.kpiCard h3 {
+  color: var(--text-light);
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.kpiValue {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.chartContainer {
+  background-color: var(--background);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.chartContainer h2 {
+  color: var(--text);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.chart {
+  margin-top: var(--spacing-md);
+}
+
+.chartGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.stockAlerts {
+  background-color: var(--background);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.tableContainer {
+  margin-top: var(--spacing-md);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-sm);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.outOfStock,
+.lowStock {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.outOfStock {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.lowStock {
+  background-color: #fff7ed;
+  color: #c2410c;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dateFilters {
+    flex-wrap: wrap;
+  }
+
+  .chartGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .table {
+    font-size: 0.875rem;
+  }
+}

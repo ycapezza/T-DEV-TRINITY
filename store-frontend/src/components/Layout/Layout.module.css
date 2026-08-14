@@ -1,0 +1,115 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 16rem;
+  background-color: var(--background);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+}
+
+.sidebarHeader {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebarHeader h1 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.nav {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.link {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.link:hover {
+  background-color: #f1f5f9;
+}
+
+.activeLink {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background-color 0.2s;
+  background-color: var(--primary);
+  color: white;
+}
+
+.activeLink:hover {
+  background-color: var(--primary-dark);
+}
+
+.main {
+  flex: 1;
+  margin-left: 16rem;
+  min-width: 0;
+}
+
+.header {
+  height: 4rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 var(--spacing-md);
+  background-color: var(--background);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.logoutButton {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.875rem;
+}
+
+.logoutButton:hover {
+  background-color: #f1f5f9;
+}
+
+.content {
+  padding: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 20;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
